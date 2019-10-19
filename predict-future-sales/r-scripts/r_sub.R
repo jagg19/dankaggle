@@ -322,12 +322,7 @@ library(gbm)
 
 
 
-monthify <- function(sales,test) {
-  # get count as monthly
-  sales.monthly <- sales %>% group_by(date_block_num,shop_id,item_id) %>% summarize(item_cnt_month = sum(item_cnt_day))
-  sales.monthly <- merge(sales.monthly,test,by=c("shop_id","item_id"))
-  return(sales.monthly)
-}
+
 
 
 
